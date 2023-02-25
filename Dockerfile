@@ -6,7 +6,7 @@ RUN apt update && apt install -y tzdata; \
 
 # sshd
 RUN mkdir /run/sshd; \
-    apt install -y openssh-server rsync bash curl zip; \
+    apt install -y openssh-server rsync bash curl zip vim; \
     apt clean;
 
 ENV TZ=America/New_York

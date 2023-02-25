@@ -112,5 +112,16 @@ if [ -n "$dir" ]; then
     done
 fi
 
+sshDir="/home/$user/.ssh"
+
+if [ -n "$sshDir" ]; then
+    mkdir "$sshDir"
+    chown "$uid:$gid" "$sshDir"
+    chmod 700 "$sshDir"
+fi
+
+echo "$AUTHORIZED_KEYS" > "$sshDir/authorized_keys"
+chown "$uid:$gid" "$sshDir/authorized_keys"
+
 chsh -s /usr/bin/bash "$user"
 chown "$uid:$gid" "/home/$user"
