@@ -12,11 +12,12 @@ RUN mkdir /run/sshd; \
 ENV TZ=America/New_York
 
 COPY files/create-user /usr/local/bin/
-COPY files/entrypoint /
 
 RUN /usr/local/bin/create-user "web:donotuse:33:33"
 
 RUN curl -fsSL https://code-server.dev/install.sh | sh
+
+COPY files/entrypoint /
 
 EXPOSE 8080
 
