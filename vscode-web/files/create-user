@@ -123,7 +123,10 @@ fi
 echo "$AUTHORIZED_KEYS" > "$sshDir/authorized_keys"
 chown "$uid:$gid" "$sshDir/authorized_keys"
 
-chsh -s /usr/bin/bash "$user"
+chsh -s /usr/bin/zsh "$user"
 chown "$uid:$gid" "/home/$user"
 usermod -d "/home/$user" "www-data"
-chsh -s /usr/bin/bash "www-data"
+chsh -s /usr/bin/zsh "www-data"
+
+cp /etc/user-zshrc "/home/$user/.zshrc"
+chown "$uid:$gid" "/home/$user/.zshrc"
