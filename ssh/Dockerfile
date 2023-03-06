@@ -6,7 +6,7 @@ RUN apt update && apt install -y tzdata; \
 
 # sshd
 RUN mkdir /run/sshd; \
-    apt install -y openssh-server rsync bash curl zip vim zsh nodejs iputils-ping dnsutils; \
+    apt install -y openssh-server rsync bash curl zip vim zsh nodejs python3 python3-venv iputils-ping dnsutils; \
     apt clean;
 
 ENV TZ=America/New_York
