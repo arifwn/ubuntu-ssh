@@ -1,0 +1,4 @@
+{
+    "files.autoSave": "off",
+    "window.title": "${rootName}${separator}${dirty}${activeEditorShort}${separator}${profileName}${separator}${appName}${separator}${remoteName}"
+}

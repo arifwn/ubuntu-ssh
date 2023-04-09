@@ -19,6 +19,12 @@ RUN /usr/local/bin/create-user "web:donotuse:33:33"
 RUN curl -fsSL https://code-server.dev/install.sh | sh
 
 COPY files/entrypoint /
+COPY files/machine-settings.json /home/web/.local/share/code-server/Machine/settings.json
+COPY files/user-settings.json /home/web/.local/share/code-server/User/settings.json
+
+RUN \
+    chown -R 33:33 /home/web/.local/share/code-server/Machine/settings.json; \
+    chown -R 33:33 /home/web/.local/share/code-server/User/settings.json
 
 EXPOSE 8080
 
