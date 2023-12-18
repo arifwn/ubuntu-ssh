@@ -23,8 +23,7 @@ COPY files/machine-settings.json /home/web/.local/share/code-server/Machine/sett
 COPY files/user-settings.json /home/web/.local/share/code-server/User/settings.json
 
 RUN \
-    chown -R 33:33 /home/web/.local/share/code-server/Machine/settings.json; \
-    chown -R 33:33 /home/web/.local/share/code-server/User/settings.json
+    chown -R 33:33 /home/web/.local
 
 EXPOSE 8080
 
