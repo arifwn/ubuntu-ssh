@@ -1,0 +1,11 @@
+{
+  "preferred_line_length": 160,
+  "languages": {
+    "HTML": {
+      "format_on_save": "off"
+    },
+    "PHP": {
+      "format_on_save": "on"
+    }
+  }
+}
